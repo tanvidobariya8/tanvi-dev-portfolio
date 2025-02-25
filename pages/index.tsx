@@ -4,6 +4,7 @@ import HeroSection from "@/Components/HeroSection";
 import { Projects } from "@/Components/ProjectsSection";
 import { Skills } from "@/Components/Skills";
 import React from "react";
+// import "@/globals.css";
 
 const Home = () => {
   return (
