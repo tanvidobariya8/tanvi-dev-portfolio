@@ -1,5 +1,5 @@
 import Image from "next/image";
-import tanvi from "../public/Tanvi12.jpg";
+import tanvi from "../public/Tanvi.jpg";
 import AnimatedTitle from "./Common/AnimatedTitle";
 
 export function HeroSection() {
@@ -7,11 +7,11 @@ export function HeroSection() {
     <div className="items-start p-4 sm:p-6 md:p-8 xl:fixed w-full max-w-7xl mx-auto">
       {/* Profile Image */}
       <div className="relative h-32 w-32 sm:h-40 sm:w-40 md:h-48 md:w-48 overflow-hidden rounded-full border-2 border-gray-500 mb-4 sm:mb-6 mx-auto sm:mx-0">
-        <Image
+        {/* <Image
           src={tanvi}
           alt="Profile"
           className="h-full w-full object-cover"
-        />
+        /> */}
       </div>
 
       {/* Text Section */}
