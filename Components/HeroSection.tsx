@@ -1,5 +1,5 @@
 import Image from "next/image";
-import tanvi from "../public/Tanvi.jpg";
+import tanvi from "../public/Tanvi12.jpg";
 import AnimatedTitle from "./Common/AnimatedTitle";
 
 export function HeroSection() {
