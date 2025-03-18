@@ -24,7 +24,7 @@ const Home = () => {
             width: "50%",
             display: "flex",
             flexDirection: "column",
-            gap: "48px",
+            gap: "20px",
           }}
         >
           <section style={{ scrollMarginTop: "80px" }} id="about">
