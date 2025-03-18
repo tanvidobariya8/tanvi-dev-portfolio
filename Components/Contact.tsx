@@ -123,7 +123,7 @@ export const Contact = () => {
               }}
               type="submit"
             >
-              Download My CV
+              Contact Me
             </button>
           </form>
         </CardContent>

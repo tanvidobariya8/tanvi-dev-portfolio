@@ -1,11 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: linear-gradient(to bottom right, #1a1a2e, #16213e);
+  overflow-x: hidden;
+
 }
+
 
 .animated-title {
   font-size: 2.5rem;
@@ -95,22 +98,4 @@ input:focus,
 textarea:focus {
   border-color: #00ffaa;
   box-shadow: 0px 0px 5px rgba(0, 255, 170, 0.5);
-}
-
-/* Button Styling */
-.btn-submit {
-  background: linear-gradient(to right, #ff416c, #ff4b2b);
-  color: white;
-  padding: 12px;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-  transition: background 0.3s ease-in-out;
-}
-
-.btn-submit:hover {
-  background: linear-gradient(to right, #ff4b2b, #ff416c);
 }
