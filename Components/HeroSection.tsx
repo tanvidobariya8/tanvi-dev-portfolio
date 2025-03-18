@@ -7,19 +7,18 @@ export function HeroSection() {
     <div
       style={{
         display: "flex",
+        justifyContent: "center",
         flexDirection: "column",
-        alignItems: "start",
-        padding: "16px",
-        maxWidth: "1200px",
-        margin: "0 auto",
+        alignItems: "flex-start",
+        padding: "64px",
+        margin: "auto",
       }}
     >
       {/* Profile Image */}
       <div
         style={{
-          position: "relative",
-          height: "128px",
-          width: "128px",
+          height: "190px",
+          width: "190px",
           overflow: "hidden",
           borderRadius: "50%",
           border: "2px solid gray",
@@ -34,10 +33,10 @@ export function HeroSection() {
       </div>
 
       {/* Text Section */}
-      <div style={{ textAlign: "center", maxWidth: "600px" }}>
+      <div style={{ textAlign: "start", maxWidth: "600px" }}>
         {/* Title and Intro */}
         <div>
-          <h1 style={{ fontSize: "2rem", fontWeight: "bold" }}>
+          <h1 style={{ fontSize: "3.5rem", fontWeight: "bold" }}>
             Hi, I'm{" "}
             <span
               style={{
@@ -69,7 +68,6 @@ export function HeroSection() {
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
             gap: "12px",
             marginTop: "16px",

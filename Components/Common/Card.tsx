@@ -4,11 +4,7 @@ const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, children, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={`rounded-lg bg-gray-800 text-gray-200 shadow-lg p-5 m-8 ${className}`} // Added shadow-lg and removed white border
-    {...props}
-  >
+  <div ref={ref} className={`card ${className}`} {...props}>
     {children}
   </div>
 ));
@@ -18,7 +14,7 @@ const CardHeader = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, children, ...props }, ref) => (
-  <div ref={ref} className={`text-2xl font-semibold ${className}`} {...props}>
+  <div ref={ref} className={`card-header ${className}`} {...props}>
     {children}
   </div>
 ));
@@ -29,8 +25,8 @@ const CardContent = React.forwardRef<
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, children, ...props }, ref) => (
   <>
-    <div className="border-b border-b-gray-600"></div>
-    <div ref={ref} className={`mt-4 text-gray-400 ${className}`} {...props}>
+    <div className="card-divider"></div>
+    <div ref={ref} className={`card-content ${className}`} {...props}>
       {children}
     </div>
   </>
@@ -41,7 +37,7 @@ const CardFooter = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, children, ...props }, ref) => (
-  <div ref={ref} className={`mt-4 ${className}`} {...props}>
+  <div ref={ref} className={`card-footer ${className}`} {...props}>
     {children}
   </div>
 ));

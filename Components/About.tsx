@@ -2,13 +2,19 @@ import { Card, CardContent, CardHeader } from "./Common/Card";
 
 export function About() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "24px",
+        margin: "30px",
+      }}
+    >
       <Card
         style={{
           maxWidth: "640px",
           margin: "0 auto",
           padding: "24px",
-          background: "#222",
           borderRadius: "8px",
           boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
         }}

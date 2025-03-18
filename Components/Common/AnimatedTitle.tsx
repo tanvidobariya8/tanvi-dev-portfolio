@@ -15,7 +15,7 @@ export function AnimatedTitle() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsAnimating(true);
+      setIsAnimating(false);
 
       setTimeout(() => {
         setCurrentTitle((prevTitle) => {
@@ -23,19 +23,16 @@ export function AnimatedTitle() {
           const nextIndex = (currentIndex + 1) % titles.length;
           return titles[nextIndex];
         });
-        setIsAnimating(false);
-      }, 500); // Half-second transition
+
+        setIsAnimating(true);
+      }, 200); // Small delay for smooth effect
     }, 3000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <h2
-      className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-200 fade-scale mt-3 *: ${
-        isAnimating ? "animate" : ""
-      }`}
-    >
+    <h2 className={`animated-title ${isAnimating ? "show" : ""}`}>
       {currentTitle}
     </h2>
   );
