@@ -4,23 +4,48 @@ import AnimatedTitle from "./Common/AnimatedTitle";
 
 export function HeroSection() {
   return (
-    <div className="items-start p-4 sm:p-6 md:p-8 xl:fixed w-full max-w-7xl mx-auto">
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "start",
+        padding: "16px",
+        maxWidth: "1200px",
+        margin: "0 auto",
+      }}
+    >
       {/* Profile Image */}
-      <div className="relative h-32 w-32 sm:h-40 sm:w-40 md:h-48 md:w-48 overflow-hidden rounded-full border-2 border-gray-500 mb-4 sm:mb-6 mx-auto sm:mx-0">
+      <div
+        style={{
+          position: "relative",
+          height: "128px",
+          width: "128px",
+          overflow: "hidden",
+          borderRadius: "50%",
+          border: "2px solid gray",
+          marginBottom: "16px",
+        }}
+      >
         <Image
           src={tanvi}
           alt="Profile"
-          className="h-full w-full object-cover"
+          style={{ height: "100%", width: "100%", objectFit: "cover" }}
         />
       </div>
 
       {/* Text Section */}
-      <div className="flex flex-col gap-4 sm:gap-6 text-center sm:text-left">
+      <div style={{ textAlign: "center", maxWidth: "600px" }}>
         {/* Title and Intro */}
         <div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold">
+          <h1 style={{ fontSize: "2rem", fontWeight: "bold" }}>
             Hi, I'm{" "}
-            <span className="bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">
+            <span
+              style={{
+                backgroundImage: "linear-gradient(to right, #ec4899, #f43f5e)",
+                WebkitBackgroundClip: "text",
+                color: "transparent",
+              }}
+            >
               Tanvi
             </span>
           </h1>
@@ -28,56 +53,69 @@ export function HeroSection() {
         </div>
 
         {/* Description */}
-        <p className="max-w-xl sm:max-w-2xl text-sm sm:text-base text-gray-400 leading-relaxed mx-auto sm:mx-0">
+        <p
+          style={{
+            fontSize: "1rem",
+            color: "#d1d5db",
+            lineHeight: "1.6",
+            marginTop: "16px",
+          }}
+        >
           I am Tanvi, a frontend developer with 2 years of experience in
           React.js, Next.js, and Redux, creating user-friendly web interfaces.
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center sm:justify-start">
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "12px",
+            marginTop: "16px",
+          }}
+        >
           {/* Download CV Button */}
-          <button className="flex items-center justify-center gap-2 px-4 py-2 sm:px-6 sm:py-3 text-sm font-semibold text-white bg-gradient-to-r from-pink-500 to-rose-500 rounded-lg hover:from-pink-600 hover:to-rose-600 w-full sm:w-auto">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-4 h-4 sm:w-5 sm:h-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4.5 12.75l7.5 7.5m0 0l7.5-7.5m-7.5 7.5V3"
-              />
-            </svg>
+          <button
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "12px 24px",
+              fontSize: "1rem",
+              fontWeight: "bold",
+              color: "white",
+              background: "linear-gradient(to right, #ec4899, #f43f5e)",
+              borderRadius: "8px",
+              border: "none",
+              cursor: "pointer",
+            }}
+          >
             Download My CV
           </button>
 
           {/* Hire Me Button */}
           <button
-            className="flex items-center justify-center gap-2 px-4 py-2 sm:px-6 sm:py-3 text-sm font-semibold text-pink-600 bg-white border border-pink-600 rounded-lg hover:bg-gray-100 w-full sm:w-auto"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "12px 24px",
+              fontSize: "1rem",
+              fontWeight: "bold",
+              color: "#ec4899",
+              backgroundColor: "white",
+              border: "2px solid #ec4899",
+              borderRadius: "8px",
+              cursor: "pointer",
+            }}
             onClick={() => {
               window.scrollTo({
-                top: document.body.scrollHeight - 100, // Scrolls to the bottom of the page
-                behavior: "smooth", // Adds smooth scrolling animation
+                top: document.body.scrollHeight - 100,
+                behavior: "smooth",
               });
             }}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-4 h-4 sm:w-5 sm:h-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 19.5l7.5-7.5m0 0L12 4.5m7.5 7.5H3"
-              />
-            </svg>
             Hire Me
           </button>
         </div>

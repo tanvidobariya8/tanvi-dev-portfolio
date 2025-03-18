@@ -4,34 +4,48 @@ import HeroSection from "@/Components/HeroSection";
 import { Projects } from "@/Components/ProjectsSection";
 import { Skills } from "@/Components/Skills";
 import React from "react";
-// import "@/globals.css";
 
 const Home = () => {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-      <div className="container mx-auto px-4 py-12">
+    <main
+      style={{
+        minHeight: "100vh",
+        background: "linear-gradient(to bottom right, #1a1a1a, #2d2d2d)",
+        color: "white",
+      }}
+    >
+      <div
+        style={{ maxWidth: "1200px", margin: "0 auto", padding: "48px 16px" }}
+      >
         {/* Mobile-first: Stack vertically on small screens, side-by-side on larger screens */}
-        <div className="flex flex-col md:flex-row gap-8">
+        <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
           {/* Left column - Hero Section */}
-          <div className="w-full md:w-1/2">
+          <div style={{ width: "100%" }}>
             <HeroSection />
           </div>
 
           {/* Right column - Other sections */}
-          <div className="w-full md:w-1/2 space-y-12">
-            <section className="scroll-mt-20" id="about">
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              gap: "48px",
+            }}
+          >
+            <section style={{ scrollMarginTop: "80px" }} id="about">
               <About />
             </section>
 
-            <section className="scroll-mt-20" id="projects">
+            <section style={{ scrollMarginTop: "80px" }} id="projects">
               <Projects />
             </section>
 
-            <section className="scroll-mt-20" id="skills">
+            <section style={{ scrollMarginTop: "80px" }} id="skills">
               <Skills />
             </section>
 
-            <section className="scroll-mt-20" id="contact">
+            <section style={{ scrollMarginTop: "80px" }} id="contact">
               <Contact />
             </section>
           </div>

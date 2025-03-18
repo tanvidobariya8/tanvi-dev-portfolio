@@ -10,8 +10,9 @@ export const Contact = () => {
     message: "",
   });
 
-  // Handle input changes
-  const handleChange = (e: any) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -19,42 +20,39 @@ export const Contact = () => {
     }));
   };
 
-  // Handle form submission
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Replace YOUR_FORM_ID and entry IDs with your Google Form details
+    // ✅ Correct Google Form URL
     const googleFormURL =
-      "https://docs.google.com/document/d/1GWJ8qyHsSN1CxTRqAUzFmtviSKUpG9B9uY8sVCEnxJk"; // Correct URL for form submission
+      "https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse";
 
-    const formBody = new FormData();
+    const formDataGoogle = new FormData();
+    formDataGoogle.append("entry.1234567890", formData.name); // Replace with actual entry ID for 'Name'
+    formDataGoogle.append("entry.0987654321", formData.phone); // Replace with actual entry ID for 'Phone'
+    formDataGoogle.append("entry.1122334455", formData.email); // Replace with actual entry ID for 'Email'
+    formDataGoogle.append("entry.6677889900", formData.subject); // Replace with actual entry ID for 'Subject'
+    formDataGoogle.append("entry.2233445566", formData.message); // Replace with actual entry ID for 'Message'
 
-    // Replace the placeholders below with actual entry IDs
-    formBody.append("entry.1928374650", formData.name); // Replace with actual Name entry ID
-    formBody.append("entry.2847563920", formData.phone); // Replace with actual Phone entry ID
-    formBody.append("entry.3847562910", formData.email); // Replace with actual Email entry ID
-    formBody.append("entry.4857291048", formData.subject); // Replace with actual Subject entry ID
-    formBody.append("entry.5872938475", formData.message); // Replace with actual Message entry ID
-
-    fetch(googleFormURL, {
-      method: "POST",
-      body: formBody,
-      mode: "no-cors", // Required for Google Form submissions
-    })
-      .then(() => {
-        alert("Message sent successfully!");
-        setFormData({
-          name: "",
-          phone: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
-      })
-      .catch((error) => {
-        console.error("Error submitting the form:", error);
-        alert("Failed to send the message.");
+    try {
+      await fetch(googleFormURL, {
+        method: "POST",
+        body: formDataGoogle,
+        mode: "no-cors", // Required for Google Forms
       });
+
+      alert("Message sent successfully!");
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error submitting the form:", error);
+      alert("Failed to send the message.");
+    }
   };
 
   return (
@@ -74,6 +72,7 @@ export const Contact = () => {
                 className="w-full mt-2 p-3 bg-gray-700 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 value={formData.name}
                 onChange={handleChange}
+                required
               />
             </div>
             <div>
@@ -87,6 +86,7 @@ export const Contact = () => {
                 className="w-full mt-2 p-3 bg-gray-700 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 value={formData.phone}
                 onChange={handleChange}
+                required
               />
             </div>
           </div>
@@ -102,6 +102,7 @@ export const Contact = () => {
               className="w-full mt-2 p-3 bg-gray-700 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               value={formData.email}
               onChange={handleChange}
+              required
             />
           </div>
 
@@ -116,6 +117,7 @@ export const Contact = () => {
               className="w-full mt-2 p-3 bg-gray-700 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               value={formData.subject}
               onChange={handleChange}
+              required
             />
           </div>
 
@@ -130,6 +132,7 @@ export const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               rows={6}
+              required
             />
           </div>
 

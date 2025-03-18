@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader } from "./Common/Card";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import FontAwesomeIcon
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
   faFigma,
@@ -7,36 +7,67 @@ import {
   faJs,
   faHtml5,
   faCss3Alt,
-} from "@fortawesome/free-brands-svg-icons"; // Import the necessary icons
+} from "@fortawesome/free-brands-svg-icons";
 
 export function Skills() {
   const skills = [
-    { name: "HTML5", icon: faHtml5, colorClass: "text-orange-500" },
-    { name: "JavaScript", icon: faJs, colorClass: "text-yellow-500" },
-    { name: "React.js", icon: faReact, colorClass: "text-cyan-500" },
-    { name: "Next.js", icon: faReact, colorClass: "text-blue-600" },
-    { name: "Ant Design", icon: faReact, colorClass: "text-blue-500" },
-    { name: "Figma", icon: faFigma, colorClass: "text-pink-500" },
-    { name: "CSS", icon: faCss3Alt, colorClass: "text-blue-400" },
-    { name: "Tailwind CSS", icon: faCss3Alt, colorClass: "text-teal-500" },
-    { name: "LinkedIn", icon: faLinkedin, colorClass: "text-blue-700" },
+    { name: "HTML5", icon: faHtml5, color: "#E44D26" },
+    { name: "JavaScript", icon: faJs, color: "#F7DF1E" },
+    { name: "React.js", icon: faReact, color: "#61DAFB" },
+    { name: "Next.js", icon: faReact, color: "#0070F3" },
+    { name: "Ant Design", icon: faReact, color: "#1890FF" },
+    { name: "Figma", icon: faFigma, color: "#F24E1E" },
+    { name: "CSS", icon: faCss3Alt, color: "#2965F1" },
+    { name: "Tailwind CSS", icon: faCss3Alt, color: "#06B6D4" },
+    { name: "LinkedIn", icon: faLinkedin, color: "#0A66C2" },
   ];
 
   return (
-    <div className="space-y-6">
-      <Card className="max-w-2xl mx-auto">
-        <CardHeader>About My Skill</CardHeader>
-        <CardContent>
+    <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+      <Card
+        style={{
+          maxWidth: "640px",
+          margin: "0 auto",
+          padding: "24px",
+          background: "#222",
+          borderRadius: "8px",
+          boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
+        }}
+      >
+        <CardHeader
+          style={{
+            fontSize: "24px",
+            fontWeight: "bold",
+            marginBottom: "16px",
+            color: "#fff",
+          }}
+        >
+          About My Skill
+        </CardHeader>
+        <CardContent
+          style={{ color: "#ccc", fontSize: "16px", lineHeight: "1.6" }}
+        >
           <p>Primary skills on:</p>
-          <div className="grid grid-cols-3 gap-4 mt-4">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: "16px",
+              marginTop: "16px",
+            }}
+          >
             {skills.map((ele, i) => (
-              <div key={i} className="flex items-center space-x-2">
-                {/* Use FontAwesomeIcon component with color classes */}
+              <div
+                key={i}
+                style={{ display: "flex", alignItems: "center", gap: "8px" }}
+              >
                 <FontAwesomeIcon
                   icon={ele.icon}
-                  className={`text-3xl ${ele.colorClass}`}
+                  style={{ fontSize: "24px", color: ele.color }}
                 />
-                <span className="text-sm">{ele.name}</span>
+                <span style={{ fontSize: "14px", color: "#fff" }}>
+                  {ele.name}
+                </span>
               </div>
             ))}
           </div>
