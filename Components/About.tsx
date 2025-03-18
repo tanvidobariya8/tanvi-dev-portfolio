@@ -7,8 +7,7 @@ export function About() {
         display: "flex",
         flexDirection: "column",
         gap: "24px",
-        marginLeft: "30px",
-        marginRight: "30px",
+        marginTop: "30px",
       }}
     >
       <Card>

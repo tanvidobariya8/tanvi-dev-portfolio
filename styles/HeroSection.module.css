@@ -1,0 +1,110 @@
+/* Main Hero Section Container */
+.heroContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: auto;
+    padding: 20px;
+
+}
+
+/* Profile Image */
+.profileImage {
+    height: 190px;
+    width: 190px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid gray;
+    margin-bottom: 16px;
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Text Content */
+.textContainer {
+    max-width: 600px;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.gradientText {
+    background-image: linear-gradient(to right, #ec4899, #f43f5e);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Description */
+.description {
+    font-size: 1rem;
+    color: #d1d5db;
+    line-height: 1.6;
+    margin-top: 16px;
+}
+
+/* Buttons Container */
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+/* Download CV Button */
+.downloadButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to right, #ec4899, #f43f5e);
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hire Me Button */
+.hireMeButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ec4899;
+    background-color: white;
+    border: 2px solid #ec4899;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .heroContainer {
+        flex-direction: column;
+        text-align: left;
+        align-items: flex-start;
+        padding: 60px;
+    }
+
+    .profileImage {
+        margin-right: 32px;
+    }
+
+    .textContainer {
+        text-align: left;
+    }
+
+    .buttonContainer {
+        justify-content: flex-start;
+    }
+}

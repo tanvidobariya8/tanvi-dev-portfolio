@@ -28,8 +28,6 @@ export function Skills() {
         display: "flex",
         flexDirection: "column",
         gap: "24px",
-        marginLeft: "30px",
-        marginRight: "30px",
       }}
     >
       <Card>

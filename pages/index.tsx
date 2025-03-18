@@ -4,42 +4,32 @@ import HeroSection from "@/Components/HeroSection";
 import { Projects } from "@/Components/ProjectsSection";
 import { Skills } from "@/Components/Skills";
 import React from "react";
+import styles from "../styles/home.module.css"; // Import CSS file
 
 const Home = () => {
   return (
-    <main
-      className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white"
-      style={{
-        minHeight: "100vh",
-        color: "white",
-      }}
-    >
-      <div style={{ display: "flex", width: "100%" }}>
-        <div style={{ width: "50%" }}>
+    <main className={styles.container}>
+      <div className={styles.mainContent}>
+        {/* Left Section - Hero */}
+        <div className={styles.leftSection}>
           <HeroSection />
         </div>
 
-        <div
-          style={{
-            width: "50%",
-            display: "flex",
-            flexDirection: "column",
-            gap: "20px",
-          }}
-        >
-          <section style={{ scrollMarginTop: "80px" }} id="about">
+        {/* Right Section - About, Projects, Skills, Contact */}
+        <div className={styles.rightSection}>
+          <section id="about">
             <About />
           </section>
 
-          <section style={{ scrollMarginTop: "80px" }} id="projects">
+          <section id="projects">
             <Projects />
           </section>
 
-          <section style={{ scrollMarginTop: "80px" }} id="skills">
+          <section id="skills">
             <Skills />
           </section>
 
-          <section style={{ scrollMarginTop: "80px" }} id="contact">
+          <section id="contact">
             <Contact />
           </section>
         </div>
