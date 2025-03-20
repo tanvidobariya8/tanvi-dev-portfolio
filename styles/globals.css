@@ -1,12 +1,12 @@
 body,
 html {
+  box-sizing: border-box;
   height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: linear-gradient(to bottom right, #1a1a2e, #16213e);
-  overflow-x: hidden;
-
 }
 
 
@@ -84,7 +84,7 @@ label {
 input,
 textarea {
   width: 100%;
-  padding: 12px;
+  padding: 8px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 5px;
   background: #2c2c3b;

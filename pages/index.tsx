@@ -8,7 +8,7 @@ import styles from "../styles/home.module.css"; // Import CSS file
 
 const Home = () => {
   return (
-    <main className={styles.container}>
+    <div className={styles.container}>
       <div className={styles.mainContent}>
         {/* Left Section - Hero */}
         <div className={styles.leftSection}>
@@ -34,7 +34,7 @@ const Home = () => {
           </section>
         </div>
       </div>
-    </main>
+    </div>
   );
 };
 

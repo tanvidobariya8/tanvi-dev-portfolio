@@ -20,7 +20,7 @@ export function ProjectCard({
   const isEven = index % 2 !== 0; // Check if the index is even
 
   return (
-    <div className="overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm">
+    <div className="overflow-hidden rounded-xl  backdrop-blur-sm">
       <div
         className={`grid gap-8 p-6 lg:grid-cols-2 lg:p-8 ${
           isEven ? "lg:grid-cols-2" : "lg:grid-cols-2 lg:grid-flow-row-dense"

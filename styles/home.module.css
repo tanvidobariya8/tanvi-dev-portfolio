@@ -1,7 +1,7 @@
 /* Container */
 .container {
     color: white;
-    padding: 20px;
+    /* padding: 20px; */
     width: 100%;
     overflow-x: hidden;
 }
@@ -18,7 +18,7 @@
 /* Left Section - Hero */
 .leftSection {
     width: 50%;
-    padding: 20px;
+    /* padding: 20px; */
     position: fixed;
 }
 
@@ -27,7 +27,10 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
     position: absolute;
     right: 0;
 }
@@ -40,16 +43,36 @@
 
     .leftSection,
     .rightSection {
-        width: 100%;
-        padding: 0;
-        display: flex;
-        position: static;
-
+        width: 90%;
+        padding: 20px;
+        /* display: flex;
+        align-items: center;
+        justify-content: center; */
+        position: inherit;
+        margin: 10px;
     }
+
 }
 
 @media (max-width: 768px) {
     .container {
         padding: 10px;
+    }
+
+    .leftSection {
+        width: 100%;
+        padding: 0;
+        position: inherit;
+        margin: 0;
+
+    }
+
+    .rightSection {
+        width: min-content;
+        display: flex;
+        position: relative;
+        margin: 0;
+        padding: 0;
+
     }
 }
