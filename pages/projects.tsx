@@ -1,6 +1,7 @@
 import React from "react";
 import tanvi from "../public/tanvi.png";
 import { ProjectCard } from "@/Components/Common/ProjectCard";
+import styles from "../styles/Projects.module.css"; // Import the CSS file
 
 const projects = () => {
   const projects = [
@@ -15,7 +16,7 @@ const projects = () => {
         "Implemented a sophisticated email verification workflow during new user registrations to ensure account authenticity.",
         "Designed a four-layered API architecture with well-structured layers, Controller for HTTP requests, Service for business logic, Repository for data access, and Model for data integrity. Used mongoose ODM for mongoDB related operations",
       ],
-      imageUrl: tanvi,
+      imageUrl: "",
       liveUrl: "#",
     },
     {
@@ -33,10 +34,10 @@ const projects = () => {
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-      <div className="container mx-auto px-4 py-12">
-        <h1 className="mb-12 text-center text-5xl font-bold">My Projects</h1>
-        <div className="space-y-8">
+    <main className={styles.projectsContainer}>
+      <div className={styles.container}>
+        <h1 className={styles.title}>My Projects</h1>
+        <div className={styles.projectsList}>
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} index={index} />
           ))}

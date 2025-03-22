@@ -36,18 +36,6 @@ export function Projects() {
               <p>
                 <strong>Technologies used:</strong> {project.technologies}
               </p>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: "#00A2FF",
-                  textDecoration: "none",
-                  fontWeight: "bold",
-                }}
-              >
-                View Project
-              </a>
             </div>
           ))}
           <div

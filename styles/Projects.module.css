@@ -1,0 +1,29 @@
+/* Projects.module.css */
+
+.projectsContainer {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right,
+            #111827,
+            #1f2937);
+    /* from-gray-900 to-gray-800 */
+    color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: .5rem;
+}
+
+.title {
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.projectsList {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

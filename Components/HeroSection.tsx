@@ -40,10 +40,10 @@ export function HeroSection() {
           <button
             className={styles.hireMeButton}
             onClick={() => {
-              window.scrollTo({
-                top: document.body.scrollHeight - 100,
-                behavior: "smooth",
-              });
+              const contactSection = document.getElementById("contact");
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: "smooth" });
+              }
             }}
           >
             Hire Me

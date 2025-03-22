@@ -1,4 +1,5 @@
 import Image from "next/image";
+import styles from "../../styles/ProjectCard.module.css"; // Import the CSS file
 
 interface ProjectCardProps {
   title: string;
@@ -20,28 +21,32 @@ export function ProjectCard({
   const isEven = index % 2 !== 0; // Check if the index is even
 
   return (
-    <div className="overflow-hidden rounded-xl  backdrop-blur-sm">
+    <div className={styles.cardContainer}>
       <div
-        className={`grid gap-8 p-6 lg:grid-cols-2 lg:p-8 ${
-          isEven ? "lg:grid-cols-2" : "lg:grid-cols-2 lg:grid-flow-row-dense"
+        className={`${styles.gridContainer} ${
+          isEven ? styles.evenLayout : styles.oddLayout
         }`}
       >
         {/* Content Section */}
-        <div className={`space-y-6 ${isEven ? "order-last" : "order-first"}`}>
+        <div
+          className={`${styles.contentSection} ${
+            isEven ? styles.orderLast : styles.orderFirst
+          }`}
+        >
           <div>
-            <h2 className="text-2xl font-bold">{title}</h2>
-            <p className="mt-2 text-sm text-gray-400">{technologies}</p>
+            <h2 className={styles.title}>{title}</h2>
+            <p className={styles.technologies}>{technologies}</p>
           </div>
-          <ul className="space-y-2 text-gray-300">
+          <ul className={styles.descriptionList}>
             {description.map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
           </ul>
           <a
             href={liveUrl}
-            target="_blank"
+            // target="_blank"
             rel="noopener noreferrer"
-            className="inline-block gap-2 bg-gradient-to-r from-pink-500 to-rose-500 py-2 px-4 rounded-md text-white font-medium"
+            className={styles.liveButton}
           >
             LIVE
           </a>
@@ -49,11 +54,11 @@ export function ProjectCard({
 
         {/* Image Section */}
         <div
-          className={`relative aspect-[16/9] overflow-hidden rounded-lg ${
-            isEven ? "" : "order-first"
+          className={`${styles.imageContainer} ${
+            isEven ? "" : styles.orderFirst
           }`}
         >
-          <Image src={imageUrl} alt={title} fill className="object-cover" />
+          <Image src={imageUrl} alt={title} fill className={styles.image} />
         </div>
       </div>
     </div>
