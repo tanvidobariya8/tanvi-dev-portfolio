@@ -29,8 +29,8 @@ export function HeroSection() {
         <div className={styles.buttonContainer}>
           {/* Download CV Button */}
           <a
-            href="/tanvi_resume.pdf" // Replace with the path to your CV
-            download="tanvi_resume.pdf" // Optional: Specify the downloaded file name
+            href="/Tanvi_resume.pdf" // Replace with the path to your CV
+            download="Tanvi_resume.pdf" // Optional: Specify the downloaded file name
             className={styles.downloadButton}
           >
             Download My CV
